@@ -3,12 +3,14 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 const Resources = require('./models/resources')
 const app = express();
-const port = 3000
+const port = 3001
 const resourcesController = require('./controllers/resources')
+const cors =require('cors')
 
 // Middleware
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json()); 
+app.use(cors({ origin: '*' }))
 
 // Routes
 app.use('/resources', resourcesController)
