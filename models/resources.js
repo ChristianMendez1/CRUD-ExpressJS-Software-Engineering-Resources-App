@@ -1,10 +1,7 @@
 const mongoose = require('mongoose')
 
 const resourceSchema = new mongoose.Schema({
-   tutorials: String,
-   jobboards: String,
-   definitions: String,
-   instructions: String,
+   tutorials: String
 })
 
 const Resources = mongoose.model('Resource', resourceSchema)
