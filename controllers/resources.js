@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const Resources = require('../models/resources.js') 
+const resourceData = require('../utilities/data.js')
+
 
 router.get('/', (req, res)=>{
     Resources.find({}, (err, foundResources)=>{
         res.json(foundResources)
     })
 });
+
+router.get('/seed', async (req, res) => {
+        await Resources.deleteMany({});
+        await Resources.insertMany(resourceData);
+  });
 
 router.delete('/:id', (req, res)=>{
     Resources.findByIdAndRemove(req.params.id, (err, deletedResource)=>{

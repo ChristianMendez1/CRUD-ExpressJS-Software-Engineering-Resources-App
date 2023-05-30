@@ -3,6 +3,7 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 const Resources = require('./models/resources')
 const resourcesController = require('./controllers/resources')
+const resourceData = require('./utilities/data.js')
 const cors =require('cors')
 const db = mongoose.connection
 
@@ -18,7 +19,8 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 
 // Middleware
 app.use(express.urlencoded({ extended: false }))
-app.use(express.json()); 
+app.use(express.json()); //creates
+app.use(express.static('public'))
 app.use(cors({ origin: '*' }))
 
 // Routes
