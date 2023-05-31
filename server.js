@@ -19,7 +19,7 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 
 // Middleware
 app.use(express.urlencoded({ extended: false }))
-app.use(express.json()); //creates
+app.use(express.json()); 
 app.use(express.static('public'))
 app.use(cors({ origin: '*' }))
 
