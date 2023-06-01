@@ -20,7 +20,7 @@ Features a Front-end that uses React and Back-end that uses Express. The Back-en
 
 # How to use
 
-Deployed through https://crud-reactjs-seresourcesapp.onrender.com/resources
+Deployed through https://crud-reactjs-seresourcesapp.onrender.com
 
 # Approach taken
 
